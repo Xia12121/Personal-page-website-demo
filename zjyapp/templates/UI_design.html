@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>User Interface Design</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'css/base.css' %}">  
+   <link rel="stylesheet" href="{% static 'css/main.css' %}">
+   <link rel="stylesheet" href="{% static 'css/vendor.css' %}">     
+
+
+   <style type="text/css" media="screen">
+
+   	#styles { 
+   		background: white;
+   		padding-top: 12rem;
+   		padding-bottom: 12rem;
+   	}
+   	#styles .row {
+   		max-width: 1024px;
+     	}
+     	#styles .section-intro {
+   		max-width: 800px;
+     	}
+      	
+   </style>       
+
+   <!-- script
+   ================================================== -->
+   <script src="{% static 'js/modernizr.js' %}"></script>
+   <script src="{% static 'js/pace.min.js' %}"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
+
+</head>
+
+<body id="top">
+
+	<!-- header 
+   ================================================== -->
+   <header>   	
+   	<div class="row">
+
+   		<div class="top-bar">
+   			<a class="menu-toggle" href="#"><span>Menu</span></a>
+
+	   		<div class="logo">
+				<a href="{%url 'index'%}">ZJY</a>
+		      </div>		      
+
+		   			
+   		</div> <!-- /top-bar --> 
+   		
+   	</div> <!-- /row --> 		
+   </header> <!-- /header -->
+
+	<!-- intro section
+   ================================================== -->
+   <section id="intro">   
+
+   	<div class="intro-overlay"></div>	
+
+   	<div class="intro-content">
+   		<div class="row">
+
+   			<div class="col-twelve">
+				<h1>UI Design</h1>
+	   			<h5>Graduates go to statistical website UI design</h5>
+
+	   		</div>  
+   			
+   		</div>   		 		
+   	</div> <!-- /intro-content --> 
+   	
+
+   </section> <!-- /intro -->
+
+
+   <!-- Style Demo
+   ================================================== -->
+   <section id="styles">
+
+   	<div class="row section-intro">
+
+   		<div class="col-twelve">
+
+   			<h2>Beijing Normal University - Hong Kong Baptist University Joint International College Graduate Employment Statistics Website (GPS)</h2>
+
+   			<p class="lead">In this project, my teammates and I jointly designed and built the statistics website of graduates' destination based on Django architecture, and my main work was responsible for the UI design of the website.</p>   			
+
+   		</div>
+
+     	</div> <!-- /row -->
+
+     	<div class="row">
+
+     		<div class="col-six tab-full">
+
+		      <h3>Introduction of Functions</h3>
+
+		      <p>
+				The website is a forum website, users can register, log in, comment, post blog, like, pay attention to and share their employment/study destination. 
+				This website aims to serve UIC students according to their own conditions such as GPA, IELTS scores, target colleges and regions to screen the 
+				admission cases of seniors and seniors, and help users complete their career planning.</p>
+
+				<p>
+					My task mainly focused on the UI design. In this part, we optimized the user's operation process and improved 
+					the quality of business services by simulating user operations for many times.</p>
+
+
+
+         </div>
+
+         <div class="col-six tab-full">
+			<h3>Effect drawing</h3>
+			<p><img src="{%static 'images/UI1.jpg'%}"></p>
+			<p><img src="{%static 'images/UI2.jpg'%}"></p>
+
+				<a class="button full-width" href="{% static 'files/Blog-GPS.zip' %}">Download Full Project</a>
+
+		   </div>	         
+
+		</div> <!-- /row -->
+
+
+		   	
+   </section> <!--styles -->	
+
+	
+   <!-- contact
+   ================================================== -->
+   <section id="contact">
+
+	<div class="row section-intro">
+	   <div class="col-twelve">
+
+		   <h5>Contact</h5>
+		   <h1>I'd Love To Hear From You.</h1>
+
+		   <p class="lead">If you want to communicate with me, please leave your name, email and message content. I will contact you as soon as I receive it, thank you.</p>
+
+	   </div> 
+   </div> <!-- /section-intro -->
+
+   <div class="row contact-form">
+
+	   <div class="col-twelve">
+
+		<!-- form -->
+		<!-- 假设你的表单处理视图对应的 URL 是 'create_message' -->
+		<form method="post" action="{% url 'create_message' %}">
+			{% csrf_token %}
+			<fieldset>
+
+				<div class="form-field">
+					<input name="name" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
+				</div>
+				<div class="form-field">
+					<input name="email" type="email" id="contactEmail" placeholder="Email" value="" required="">
+				</div>
+				<div class="form-field">
+					<textarea name="content" id="contactMessage" placeholder="Message" rows="10" cols="50" required=""></textarea>
+				</div>
+				<div class="form-field">
+					<button class="submitform">Submit</button>
+				</div>
+
+			</fieldset>
+		</form>
+
+
+		<!-- contact-warning -->
+		<div id="message-warning">            	
+		</div>            
+		<!-- contact-success -->
+		  <div id="message-success">
+		   <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+		  </div>
+
+	 </div> <!-- /col-twelve -->
+	   
+   </div> <!-- /contact-form -->
+
+   <div class="row contact-info">
+
+	   <div class="col-four tab-full">
+
+		   <div class="icon">
+			   <i class="icon-pin"></i>
+		   </div>
+
+		   <h5>Where to find me</h5>
+
+		   <p>
+			No.2000, Jintong Road<br> 
+			Xiangzhou District, Zhuhai, Guangdong<br>
+			519075, China
+		</p>
+
+	   </div>
+
+	   <div class="col-four tab-full collapse">
+
+		   <div class="icon">
+			   <i class="icon-mail"></i>
+		   </div>
+
+		   <h5>Email Me At</h5>
+
+		   <p>jinyuan20020309@aliyun.com<br>		     
+		   </p>
+
+	   </div>
+
+	   <div class="col-four tab-full">
+
+		   <div class="icon">
+			   <i class="icon-phone"></i>
+		   </div>
+
+		   <h5>Call Me At</h5>
+
+		   <p>Phone: (+86) 18083607612<br>
+		   </p>
+
+	   </div>
+	   
+   </div> <!-- /contact-info -->
+	
+</section> <!-- /contact -->
+
+   <!-- footer
+   ================================================== -->
+
+   
+
+   <div id="preloader"> 
+    	<div id="loader"></div>
+   </div> 
+
+   <!-- Java Script
+   ================================================== --> 
+   <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+   <script src="{% static 'js/plugins.js' %}"></script>
+   <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

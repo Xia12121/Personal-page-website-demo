@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+{% load static %}
+
+<head>
+	<!--- basic page needs
+	================================================== -->
+	<meta charset="utf-8">
+	<title>Stewie</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+ 
+	<!-- mobile specific metas
+	================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+ 
+	<!-- CSS
+	================================================== -->
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">  
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'css/vendor.css' %}">     
+ 
+	<!-- script
+	================================================== -->   
+	<script src="{% static 'js/modernizr.js' %}"></script>
+	<script src="{% static 'js/pace.min.js' %}"></script>
+ 
+	<!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
+ 
+ </head>
+ 
+
+<body id="top">
+
+	<!-- header 
+   ================================================== -->
+   <header>   	
+   	<div class="row">
+
+   		<div class="top-bar">
+   			<a class="menu-toggle" href="#"><span>Menu</span></a>
+
+	   		<div class="logo">
+		         <a href="{%url 'index'%}">ZJY</a>
+		      </div>		      
+
+		   	<nav id="main-nav-wrap">
+					<ul class="main-navigation">
+						<li class="current"><a class="smoothscroll"  href="#intro" title="">Home</a></li>
+						<li><a class="smoothscroll"  href="#about" title="">About</a></li>
+						<li><a class="smoothscroll"  href="#resume" title="">Experience</a></li>
+						<li><a class="smoothscroll"  href="#portfolio" title="">Portfolio</a></li>
+						<li><a class="smoothscroll"  href="#services" title="">Courses</a></li>					
+						<li><a class="smoothscroll"  href="#contact" title="">Contact</a></li>	
+								
+					</ul>
+				</nav>    		
+   		</div> <!-- /top-bar --> 
+   		
+   	</div> <!-- /row --> 		
+   </header> <!-- /header -->
+
+	<!-- intro section
+   ================================================== -->
+   <section id="intro">   
+
+   	<div class="intro-overlay"></div>	
+
+   	<div class="intro-content">
+   		<div class="row">
+
+   			<div class="col-twelve">
+
+	   			<h5>Hello, World.</h5>
+	   			<h1>I'm {{ personal_info.name }}.</h1>
+
+	   			<p class="intro-position">
+	   				<span>Postgraduate student from UIC</span>
+	   				<span>Major in Public Relationship and Advertising</span> 
+	   			</p>
+
+	   			<a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
+
+	   		</div>  
+   			
+   		</div>   		 		
+   	</div> <!-- /intro-content --> 
+
+ 	
+
+   </section> <!-- /intro -->
+
+
+   <!-- about section
+   ================================================== -->
+   <section id="about">  
+
+   	<div class="row section-intro">
+   		<div class="col-twelve">
+
+   			<h5>About</h5>
+   			<h1>Let me introduce myself.</h1>
+
+   			<div class="intro-info">
+
+   				<img src="{% static 'images/zjyprofile.jpg' %}" alt="Profile Picture">
+
+   				<p class="lead">{{ personal_info.bio }}</p>
+   			</div>   			
+
+   		</div>   		
+   	</div> <!-- /section-intro -->
+
+   	<div class="row about-content">
+
+   		<div class="col-six tab-full">
+
+   			
+   			<ul class="info-list">
+   				<li>
+   					<strong>Fullname:</strong>
+   					<span>{{ personal_info.name }}</span>
+   				</li>
+   				<li>
+   					<strong>Birth Date:</strong>
+   					<span>{{ personal_info.birthday }}</span>
+   				</li>
+   				<li>
+   					<strong>GPA:</strong>
+   					<span>{{ personal_info.gpa }}/4</span>
+   				</li>
+				   <li>
+					<strong>school:</strong>
+					<span>{{ personal_info.school }}</span>
+				</li>
+   				<li>
+   					<strong>Majority:</strong>
+   					<span>{{ personal_info.major }}</span>
+   				</li>
+   				<li>
+   					<strong>Email:</strong>
+   					<span>m18083607612@163.com</span>
+   				</li>
+
+   			</ul> <!-- /info-list -->
+
+   		</div>
+
+   		<div class="col-six tab-full">
+
+   			<h3>Skills</h3>
+   			<p>{{skill_introduction.introduction}}</p>
+
+				<ul class="skill-bars">
+				   <li>
+				   	<div class="progress percent90"><span>90%</span></div>
+				   	<strong>MS Word, Excel, PowerPoint</strong>
+				   </li>
+				   <li>
+				   	<div class="progress percent70"><span>70%</span></div>
+				   	<strong>Premiere</strong>
+				   </li>
+				   <li>
+				   	<div class="progress percent80"><span>80%</span></div>
+				   	<strong>Xiumi</strong>
+				   </li>
+				   <li>
+				   	<div class="progress percent70"><span>70%</span></div>
+				   	<strong>SPSS</strong>
+				   </li>
+				   <li>
+
+				   	<div class="progress percent70"><span>70%</span></div>
+				   	<strong>Python</strong>
+				   </li>
+      
+				</ul> <!-- /skill-bars -->		
+
+   		</div>
+
+   	</div>
+
+   	<div class="row button-section">
+   		<div class="col-twelve">
+   			<a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a>
+   			<a href="{% static 'pdfs/CV_Zhang_Jinyuan.pdf' %}" title="Download CV" class="button button-primary">Download CV</a>
+   		</div>   		
+   	</div>
+
+   </section> <!-- /process-->    
+
+
+   <!-- resume Section
+   ================================================== -->
+	<section id="resume" class="grey-section">
+
+
+   	
+   	<div class="row resume-timeline">
+
+   		<div class="col-twelve resume-header">
+
+   			<h2>Work Experience</h2>
+
+   		</div> <!-- /resume-header -->
+
+   		<div class="col-twelve">
+
+   			<div class="timeline-wrap">
+
+			<div class="timeline-block">
+
+				<div class="timeline-ico">
+					<i class="fa fa-briefcase"></i>
+				</div>
+
+				<div class="timeline-header">
+					<h3>Administration Assistant</h3>
+					<p>05/2021 - 07/2021</p>
+				</div>
+
+				<div class="timeline-content">
+					<h4>UIC Admissions Office</h4>
+					<p>Responsible for student recruiting in the southwestern China in 2021; recruited a total number of 100 students; Organized 10 information sessions online and offline in the southwest area; accomplished admission report with detailed statistic. </p>
+				</div>
+
+			</div> <!-- /timeline-block -->
+
+
+			<div class="timeline-block">
+
+				<div class="timeline-ico">
+					<i class="fa fa-briefcase"></i>
+				</div>
+
+				<div class="timeline-header">
+					<h3>Media PR Assistant</h3>
+					<p>07/2021 - 09/2021</p>
+				</div>
+
+				<div class="timeline-content">
+					<h4>Guizhou Radio and Television Station</h4>
+					<p>Conducted 6 interviews, 10 news shooting,13 short video production, 5 live stream promotion, video editing, and official account operation, etc; Interviewed nutritionist and participated in the production of several episodes of the health science and education program; promoted live stream program for cultural and creative products of Guizhou Radio and Television Station. </p>
+				</div>
+
+			</div> <!-- /timeline-block -->
+
+
+			<div class="timeline-block">
+
+				<div class="timeline-ico">
+					<i class="fa fa-briefcase"></i>
+				</div>
+
+				<div class="timeline-header">
+					<h3>Publicity Team Leader</h3>
+					<p>09/2021 - 01/2022</p>
+				</div>
+
+				<div class="timeline-content">
+					<h4>Shanghai Frost Sullivan Consulting., Ltd.</h4>
+					<p>Operated the official account of the ‘Net Zero Future’ low-carbon society simulation competition; organized intern recruiting in southern China and promoted cooperation with universities in the area; Organized the competition with 180 participants and 30 teams; recruited more than 60 interns and managed the promotion team with morethan20 members. </p>
+				</div>
+
+			</div> <!-- /timeline-block -->
+
+
+			<div class="timeline-block">
+
+				<div class="timeline-ico">
+					<i class="fa fa-briefcase"></i>
+				</div>
+
+				<div class="timeline-header">
+					<h3>PR Assistant</h3>
+					<p>05/2023 - 08/2023</p>
+				</div>
+
+				<div class="timeline-content">
+					<h4>Shanghai Ruder Finn Group</h4>
+					<p>Coordinated with largemedicalenterprises,includingBoehringer-Ingelheim,TakedaPharmaceutical Co. Ltd., Amgen, etc.; produced PR releases, media plans, and media surveys for the mentioned enterprises; </p>
+				</div>
+
+			</div> <!-- /timeline-block -->
+
+   			</div> <!-- /timeline-wrap -->   			
+
+   		</div> <!-- /col-twelve -->
+   		
+   	</div> <!-- /resume-timeline -->
+		
+	</section> <!-- /features -->
+
+
+	<!-- Portfolio Section
+   ================================================== -->
+	<section id="portfolio">
+
+		<div class="row section-intro">
+   		<div class="col-twelve">
+
+   			<h5>Portfolio</h5>
+   			<h1>My collection of works</h1>
+
+   		</div>   		
+   	</div> <!-- /section-intro--> 
+
+   	<div class="row portfolio-content">
+
+   		<div class="col-twelve">
+
+   			<!-- portfolio-wrapper -->
+	         <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
+
+	         	<div class="bgrid folio-item">
+	               <div class="item-wrap">
+	               	<img src="{% static 'images/portfolio/python_image.jpg' %}" alt="Liberty">
+	                  <a href="#modal-01" class="overlay">	                  	           
+	                     <div class="folio-item-table">
+	                     	<div class="folio-item-cell">
+		     					       <h3 class="folio-title">Data Analysis Project</h3>	     					    
+		     					    	 <span class="folio-types">
+		     					       	  PYTHON Project
+		     					       </span>
+		     					   </div>	                      	
+	                     </div>                    
+	                  </a>
+	               </div>	               
+	        		</div> <!-- /folio-item -->
+
+	        		<div class="bgrid folio-item">
+	               <div class="item-wrap">
+	               	<img src="{% static 'images//portfolio/Business_planing.jpg' %}" alt="Shutterbug">
+	               	<a href="#modal-02" class="overlay">              		                  
+	                     <div class="folio-item-table">
+	                     	<div class="folio-item-cell">
+	                     		<h3 class="folio-title">Business Plan</h3>	     					    
+		     					    	<span class="folio-types">
+											Carbon Economy Service Platform Business Plan
+		     					      </span>		     		
+		     					   </div> 	                      	
+	                     </div>                    
+	                  </a>
+	               </div>
+	        		</div> <!-- /folio-item -->
+
+	            <div class="bgrid folio-item">
+	               <div class="item-wrap">
+	               	<img src="{% static 'images//portfolio/Video_work.png' %}"alt="Clouds">
+	                  <a href="#modal-03" class="overlay">             		                  
+	                     <div class="folio-item-table">
+	                     	<div class="folio-item-cell">
+	                     		<h3 class="folio-title">Advertising Video</h3>	     					    
+		     					    	<span class="folio-types">
+		     					       	  Video work
+		     					      </span>		     		
+		     					   </div> 	                      	
+	                     </div>                    
+	                  </a>
+	               </div>
+	        		</div> <!-- /folio-item -->
+
+	            <div class="bgrid folio-item">
+	               <div class="item-wrap">
+	               	<img src="{% static 'images/UI1.jpg' %}" alt="Beetle">
+	                  <a href="#modal-04" class="overlay">                  	                 
+	                     <div class="folio-item-table">
+	                     	<div class="folio-item-cell">
+	                     		<h3 class="folio-title">UI Design</h3>	     					    
+		     					    	<span class="folio-types">
+		     					       	  Web Design
+		     					      </span>		     		
+		     					   </div>  	                      	
+	                     </div>                    
+	                  </a>
+	               </div>
+	        		</div> <!-- /folio-item -->     
+
+
+
+	            <!-- modal popups - begin
+	            ============================================================= -->
+	            <div id="modal-01" class="popup-modal slider mfp-hide">	
+
+				     	<div class="media">
+				     		<img src="{% static 'images/portfolio/modals/python_image.jpg' %}" alt="" />
+				     	</div>      	
+
+					   <div class="description-box">
+					      <h4>Data Analysis</h4>		      
+					      <p>Vegetable price optimization model based on TCN feature fusion model and genetic algorithm</p>
+
+					      <div class="categories">PYTHON</div>			               
+					   </div>
+
+			         <div class="link-box">
+			            <a href="{% url 'Data_analysis_page' %}">Details</a>
+					      <a href="#" class="popup-modal-dismiss">Close</a>
+			         </div>		      
+
+				   </div> <!-- /modal-01 -->
+
+				   <div id="modal-02" class="popup-modal slider mfp-hide">	
+
+				     	<div class="media">
+				     		<img src="{% static 'images/portfolio/modals/Business_planing.jpg' %}" alt="" />
+				     	</div>      	
+
+					   <div class="description-box">
+					      <h4>Business Plan</h4>		      
+					      <p>Simple Carbon - New Carbon Economy Service Platform
+							-Build a bridge to connect individuals and enterprises for carbon asset circulation</p>
+
+					      <div class="categories">BUSINESS</div>			               
+					   </div>
+
+			         <div class="link-box">
+			            <a href="{%url 'Business_CO2'%}">Details</a>
+					      <a href="#" class="popup-modal-dismiss">Close</a>
+			         </div>		      
+
+				   </div> <!-- /modal-02 -->
+
+				   <div id="modal-03" class="popup-modal slider mfp-hide">	
+
+				     	<div class="media">
+				     		<img src="{% static 'images/portfolio/modals/Video_work.png' %}" alt="" />
+				     	</div>      	
+
+					   <div class="description-box">
+					      <h4>Advertising Video</h4>		      
+					      <p>The purpose of this video is for let users discover more new ways to explore "Instant Design APP", and to convey to users more and richer usage scenarios about Instant Design APP.</p>
+
+					      <div class="categories">Video Work</div>			               
+					   </div>
+
+			         <div class="link-box">
+			            <a href="{% url 'Vedio_work' %}">Details</a>
+					      <a href="#" class="popup-modal-dismiss">Close</a>
+			         </div>		      
+
+				   </div> <!-- /modal-03 -->
+
+				   <div id="modal-04" class="popup-modal slider mfp-hide">	
+
+				     	<div class="media">
+				     		<img src="{% static 'images/UI1.jpg' %}" alt="" />
+				     	</div>      	
+
+					   <div class="description-box">
+					      <h4>UI Design</h4>		      
+					      <p>User interface design and effect images.</p>
+
+					      <div class="categories">Web Design</div>			               
+					   </div>
+
+			         <div class="link-box">
+			            <a href="{% url 'UI_design' %}">Details</a>
+					      <a href="#" class="popup-modal-dismiss">Close</a>
+			         </div>		      
+
+				   </div> <!-- /modal-04 -->
+
+
+
+
+				   <!-- modal popups - end
+	            ============================================================= -->
+
+	         </div> <!-- /portfolio-wrapper --> 
+
+   		</div>  <!-- /twelve -->   
+
+   	</div> <!-- /portfolio-content --> 
+		
+	</section> <!-- /portfolio --> 
+
+
+	<!-- CTA Section
+   ================================================== -->
+
+
+	
+	<!-- services Section
+   ================================================== -->
+	<section id="services">
+
+		<div class="overlay"></div>
+
+		<div class="row section-intro">
+   		<div class="col-twelve">
+
+   			<h5>Courses</h5>
+   			<h1>Important courses studied during the undergraduate period</h1>
+
+   			<p class="lead">During my undergraduate period, I completed the study of many important subjects, which laid the foundation for my research during the postgraduate period</p>
+
+   		</div>   		
+   	</div> <!-- /section-intro -->
+
+   	<div class="row services-content">
+
+   		<div id="owl-slider" class="owl-carousel services-list">
+
+	      	<div class="service">	
+
+	      		<span class="icon"><i class="icon-earth"></i></span>            
+
+	            <div class="service-content">	
+
+	            	 <h3>Digital Media</h3>
+
+		            <p class="desc">In the digital media course I attended, I focused on learning about the production, management, and analysis of digital media. My primary research concentration revolved around the digital visualization of brand marketing across various platforms, as well as the legal constraints, copyright laws, and ethical considerations that must be adhered to when engaging in digital communication.
+	         		</p>
+	         		
+	         	</div> 	         	 
+
+				</div> <!-- /service -->
+
+				<div class="service">	
+
+					<span class="icon"><i class="icon-window"></i></span>                          
+
+	            <div class="service-content">	
+
+	            	<h3>Computer Visual Design</h3>  
+
+		            <p class="desc">In the Computer Visual Design course I attended, I learned in-depth the use and application of various design software, including Photoshop, Illustrator, Dreamweaver, and more. Through the course, I have become proficient in graphic design and web design work, and have the ability to work independently on projects such as designing posters, brochures, and pamphlets as well as building complete web pages.</p>
+
+	            </div>	                          
+
+			   </div> <!-- /service -->
+
+			   <div class="service">
+
+			   	<span class="icon"><i class="icon-paint-brush"></i></span>		            
+
+	            <div class="service-content">
+
+	            	<h3>Communication Research</h3>
+
+		            <p class="desc">In the Communication Studies course, I explored various social science research techniques in depth and became proficient in using data analysis software such as SPSS to perform statistics and analysis. Additionally, in this course, I worked with my team to complete a comprehensive study on the effectiveness of college students' communication of user-generated content (UGC) on social media platforms in the post-pandemic era.</p> 
+
+	            </div> 	            	               
+
+			   </div> <!-- /service -->
+
+				<div class="service">
+
+					<span class="icon"><i class="icon-toggles"></i></span>	              
+
+	            <div class="service-content">
+
+	            	<h3>Media and Event Planning</h3>
+
+		            <p class="desc">In the Media and Event Planning course, I learned how to utilize strategies across multiple media channels to support the success of an event. I also independently planned a marketing campaign for the Royal Canin pet food brand, including an online media campaign and an offline pop-up store set-up.</p> 
+	         		
+	            </div>                
+
+				</div> <!-- /service -->
+
+			   <div class="service">
+
+			   	<span class="icon"><i class="icon-image"></i></span>	            
+
+	            <div class="service-content">
+
+	            	<h3>Integrated Marketing Communication</h3>
+
+		            <p class="desc">In the Integrated Marketing Communication course, I learned how to effectively integrate marketing strategies and communication techniques to achieve the objective of "Speaking With One Voice". During this course, my team and I developed several integrated marketing communication plans for companies such as HeyTea, China Railway, and Anta etc.</p> 
+
+	            </div>	               
+
+			   </div> <!-- /service -->
+
+		
+	      </div> <!-- /services-list -->
+   		
+   	</div> <!-- /services-content -->
+		
+	</section> <!-- /services -->	
+
+
+	<!-- stats Section
+   ================================================== -->
+	<section id="stats" class="count-up">
+
+
+
+	</section> <!-- /stats -->
+
+	
+   <!-- contact
+   ================================================== -->
+	<section id="contact">
+
+		<div class="row section-intro">
+   		<div class="col-twelve">
+
+   			<h5>Contact</h5>
+   			<h1>I'd Love To Hear From You.</h1>
+
+   			<p class="lead">If you want to communicate with me, please leave your name, email and message content. I will contact you as soon as I receive it, thank you.</p>
+
+   		</div> 
+   	</div> <!-- /section-intro -->
+
+   	<div class="row contact-form">
+
+   		<div class="col-twelve">
+
+            <!-- form -->
+			<!-- 假设你的表单处理视图对应的 URL 是 'create_message' -->
+			<form method="post" action="{% url 'create_message' %}">
+				{% csrf_token %}
+				<fieldset>
+
+					<div class="form-field">
+						<input name="name" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
+					</div>
+					<div class="form-field">
+						<input name="email" type="email" id="contactEmail" placeholder="Email" value="" required="">
+					</div>
+					<div class="form-field">
+						<textarea name="content" id="contactMessage" placeholder="Message" rows="10" cols="50" required=""></textarea>
+					</div>
+					<div class="form-field">
+						<button class="submitform">Submit</button>
+					</div>
+
+				</fieldset>
+			</form>
+
+
+            <!-- contact-warning -->
+            <div id="message-warning">            	
+            </div>            
+            <!-- contact-success -->
+      		<div id="message-success">
+               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+      		</div>
+
+         </div> <!-- /col-twelve -->
+   		
+   	</div> <!-- /contact-form -->
+
+   	<div class="row contact-info">
+
+   		<div class="col-four tab-full">
+
+   			<div class="icon">
+   				<i class="icon-pin"></i>
+   			</div>
+
+   			<h5>Where to find me</h5>
+
+   			<p>
+				No.2000, Jintong Road<br> 
+				Xiangzhou District, Zhuhai, Guangdong<br>
+				519075, China
+            </p>
+
+   		</div>
+
+   		<div class="col-four tab-full collapse">
+
+   			<div class="icon">
+   				<i class="icon-mail"></i>
+   			</div>
+
+   			<h5>Email Me At</h5>
+
+   			<p>m18083607612@163.com<br>		     
+			   </p>
+
+   		</div>
+
+   		<div class="col-four tab-full">
+
+   			<div class="icon">
+   				<i class="icon-phone"></i>
+   			</div>
+
+   			<h5>Call Me At</h5>
+
+   			<p>Phone: (+86) 18083607612<br>
+			   </p>
+
+   		</div>
+   		
+   	</div> <!-- /contact-info -->
+		
+	</section> <!-- /contact -->
+
+
+   <!-- footer
+   ================================================== -->
+
+
+
+   <div id="preloader"> 
+    	<div id="loader"></div>
+   </div> 
+
+   <!-- Java Script
+   ================================================== --> 
+<!-- Java Script -->
+	<script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+	<script src="{% static 'js/plugins.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+
+
+</body>
+
+</html>
